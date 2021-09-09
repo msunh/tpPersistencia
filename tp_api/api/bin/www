@@ -2,6 +2,7 @@
 
 /**
  * Module dependencies.
+ * el /app.js es el archivo donde comienza el ruteo
  */
 
 var app = require('../app');
@@ -10,19 +11,23 @@ var http = require('http');
 
 /**
  * Get port from environment and store in Express.
+ * aqui se puede cambiar el puerto, en este caso esta el puerto 3001
+ * si tuvieramos mas de un programa, habría que cambiar el puerto y 
+ * colocar un puerto para cada uno
  */
 
 var port = normalizePort(process.env.PORT || '3001');
 app.set('port', port);
 
 /**
- * Create HTTP server.
+ * Create HTTP server. levvanta el servidor
  */
 
 var server = http.createServer(app);
 
 /**
  * Listen on provided port, on all network interfaces.
+ * escucha en ese puerto (port) en el puerto especificado arriba, en este caos es el 3001
  */
 
 server.listen(port);

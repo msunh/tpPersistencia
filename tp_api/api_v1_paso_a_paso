@@ -6,14 +6,46 @@
      sudo apt-get install mariadb-server
      npm install --save mariadb
      sudo npm install express-generator -g
-     npm install 
-     npm install sequelize --save
-     npm install sequelize-cli --save
+
+     /*pasos*/
+     clonar
+     situarse en el path /api
+
+     $npm install ó $npm i => instala todas las dependencias que están descriptas en el package.json
+     $npm install sequelize --save
+     $npm install sequelize-cli --save
+
+     configurar el /config/config.json con los datos de la database que vamos a trabajar
+
      npx sequelize init
      DEBUG=api:* npm start
 
 
+     //la linea de abajo genero la migracion, creando un modelo(tabla)
+                                        //nombreTabla          //campo y tipo de datos
 
-     npx sequelize-cli model:generate --name carrera --attributes nombre:string
-     npx sequelize db:migrate
+     ejemplo : npx sequelize-cli model:generate --name materias --attributes nombre:string
 
+     $npx sequelize-cli model:generate --name carrera --attributes nombre:string
+
+     luego: 
+
+     // plasma el fichero recien creado con el comando de arriba en la base de datos
+
+     $npx sequelize db:migrate 
+
+     (si sale algun error del tipo : 
+
+     node:internal/streams/writable:293
+      throw new ERR_UNKNOWN_ENCODING(encoding);
+      ^
+
+     TypeError [ERR_UNKNOWN_ENCODING]: Unknown encoding: <ref *1> Handshake
+     
+     ) : correr :
+
+     $npm update y volver a realizar la migracion
+
+     //y finalmente ejecutar este comando para realizar las consultas desde el postman:
+
+     $npm run start

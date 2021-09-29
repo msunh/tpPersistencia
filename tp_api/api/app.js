@@ -4,7 +4,7 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 var carrerasRouter = require('./routes/carreras'); // este es el controlador eh indica que dentro del path /routes estan las tablas
-
+var nuevaVariable = 0;
 
 var app = express();
 
